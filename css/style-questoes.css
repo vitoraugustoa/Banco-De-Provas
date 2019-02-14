@@ -1,0 +1,43 @@
+.conf-titulo-page h5 {
+    top: 5px;
+    position: relative;
+    left: 10px;
+}
+
+.conf-abrir-filtro {
+    display: flex;
+    justify-content: end;
+}
+
+.mdl-list__item {
+    padding: 0px;
+}
+
+.mdl-list-item-one {
+    margin-right: 20px;
+}
+
+.mdl-list-item-center {
+    margin-right: 20%;
+}
+
+.mdl-custom-border-list {
+    border-bottom: 1px solid rgb(179, 179, 179);
+    display: flex;
+}
+
+.mdl-data-table {
+    width: 100%;
+}
+
+.td-table {
+    width: 50px;
+}
+
+.btn-adm-aling {
+    margin-bottom: 10px;
+}
+
+.btn-adm-conf {
+    margin-right: 10px;
+}

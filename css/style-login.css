@@ -1,0 +1,36 @@
+.container{
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+
+.box-login{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.modal {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 2px 7px  #626262;
+}
+
+form {
+    width: 80%;
+}
+.box-inputs {
+    width: 100%;
+}
+
+.box-acts-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+

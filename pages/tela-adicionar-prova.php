@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banco de Provas - Adicionar Prova</title>
+    <?php require_once('/default-pages/head-default.php'); ?>
+    <link rel="stylesheet" href="../Material-Desing-Lite/css/getmdl-select.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-questoes.css" />
+
+</head>
+
+<body class="mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header ">
+        <?php require_once('/default-pages/config-header.php');
+      require_once('/default-pages/config-menu.php') ?>
+        <main class="mdl-layout__content padding-layout">
+            <div class="mdl-grid conf-titulo-page">
+                <a href="tela-minhas-questoes.php">Minhas Provas/</a>
+                <h5 class="mdl-cell mdl-cell--12-col ">Adicionar Prova</h5>
+            </div>
+            <hr />
+
+            <section class=" mdl-shadow--2dp">
+
+                <form action="../controller/Questao/cadastra.php" method="post">
+
+                 
+
+                    <div class="mdl-grid container-center">
+                        <div class="mdl-cell mdl-cell--5-col">
+                            <div class="mdl-textfield repositorio-questoes mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                                <input type="text" value="" class="mdl-textfield__input" name="tipo-questao" id="tipo-questao" readonly>
+                                <input id="input-tipo-questao" type="hidden" onchange="alteraFormQuestoes(this.value)" value="" name="tipo-questao">
+                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                <label for="tipo-questao" class="mdl-textfield__label text-black">TIPO DE QUESTÃO</label>
+                                <ul for="tipo-questao" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                    <li class="mdl-menu__item tipo-questoes" data-val="aberta">Aberta</li>
+                                    <li class="mdl-menu__item tipo-questoes" data-val="fechada">Fechada</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="mdl-cell mdl-cell--5-col">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                                <input type="text" value="" class="mdl-textfield__input" id="materia" readonly>
+                                <input type="hidden" value="" name="materia">
+                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                <label for="materia" class="mdl-textfield__label text-black">MATERIA</label>
+                                <ul for="materia" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                    <li class="mdl-menu__item" data-val="BY">Materia 1</li>
+                                    <li class="mdl-menu__item" data-val="BR">Materia 2</li>
+                                    <li class="mdl-menu__item" data-val="ES">Materia 3</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mdl-grid container-center">
+
+                        <div class="mdl-cell mdl-cell--5-col">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                                <input type="text" value="" class="mdl-textfield__input" id="curso" readonly>
+                                <input type="hidden" value="" name="curso">
+                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                <label for="curso" class="mdl-textfield__label text-black">CURSO</label>
+                                <ul for="curso" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                    <li class="mdl-menu__item" data-val="BY">Sistemas de informação</li>
+                                    <li class="mdl-menu__item" data-val="BR">Administração</li>
+                                    <li class="mdl-menu__item" data-val="ES">Contabilidade</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--5-col">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                                <input type="text" value="" class="mdl-textfield__input" id="dificuldade" readonly>
+                                <input type="hidden" value="" name="dificuldade">
+                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                <label for="dificuldade" class="mdl-textfield__label text-black">NIVEL DE DIFICULDADE</label>
+                                <ul for="dificuldade" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                    <li class="mdl-menu__item" data-val="BY">Fácil</li>
+                                    <li class="mdl-menu__item" data-val="BR">Intermediário</li>
+                                    <li class="mdl-menu__item" data-val="ES">Difícil</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mdl-grid ">
+                        <div class=" mdl-cell mdl-cell--12-col container-center">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <textarea class="mdl-textfield__input" type="text" name="tags" rows="1" id="tags"></textarea>
+                                <label class="mdl-textfield__label text-black" for="tags">TAGS SEPARADAS POR VIRGULA</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                     <div class="mdl-grid container-center">
+                    <div class="mdl-cell mdl-cell--5-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="sample3">
+                            <label class="mdl-textfield__label" for="sample3">Curso</label>
+                       </div>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--5-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="sample3">
+                            <label class="mdl-textfield__label" for="sample3">Valor</label>
+                       </div>
+                    </div>
+                  </div>
+            </section>
+
+
+            <div class="mdl-grid">
+                <div id="container-questao-aberta" class="invisivel conf-text-area  mdl-cell mdl-cell--12-col">
+                   ABERTA
+                </div>
+                <div id="container-questao-fechada" class=" invisivel conf-text-area  mdl-cell mdl-cell--12-col">
+                    FECHADA
+                </div>
+            </div>
+
+
+            </form>
+
+        </main>
+    </div>
+    <script src="../jQuery/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/control-subs-menus.js"></script>
+    <script src="../Material-Desing-Lite/js/getmdl-select.min.js"></script>
+    <script src="../scripts/control-container-questoes.js"></script>
+    <script src="../scripts/scripts-uteis.js"></script>
+
+</body>
+
+</html
